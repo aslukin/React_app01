@@ -4,19 +4,22 @@ import './App.css';
 import { Home } from './Pages/Home';
 import { About } from './Pages/About';
 import { Navbar } from './Components/Navbar';
+import { AlertState } from './Context/Alert/AlertState';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <div className="container pt-4">
+    <AlertState>
+      <BrowserRouter>
+        <Navbar />
+        <div className="container pt-4">
 
-        <Switch>
-            <Route path = {"/"} exact component = {Home} />
-            <Route path = {"/about"}  component = {About} />
-        </Switch>
-      </div>
-    </BrowserRouter>
+          <Switch>
+            <Route path={"/"} exact component={Home} />
+            <Route path={"/about"} component={About} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </AlertState>
   );
 }
 
