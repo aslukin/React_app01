@@ -1,18 +1,21 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Home } from './Pages/Home';
+import { About } from './Pages/About';
+import { Navbar } from './Components/Navbar';
 
 function App() {
   return (
-    <div className="container">
-        <h1 className="display-1">Display 1</h1>
-
-        <h1>
-          test
-        </h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <div className="container pt-4">
+        <Switch>
+            <Route path = {"/"} exact component = {Home} />
+            <Route path = {"/about"}  component = {About} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

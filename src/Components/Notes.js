@@ -1,0 +1,30 @@
+import React from 'react';
+
+
+export const Notes = ({notes}) => {
+    return(
+        <ul className="list-group">
+            {notes.map(note => (
+                <li className = "list-group-item note"
+                key = {note.id}>
+                    <div>
+                    <strong>{note.title}</strong>
+
+                    <small>{new Date().toLocaleString()}</small>
+                    </div>
+                    <button type="button" className="btn btn-outline-danger btn-sm">Done</button>
+                </li>
+            ))}
+            
+            
+            
+            {/* {notes.map(note = )}
+            <li className="list-group-item">
+                Note 1
+            </li>
+            <li className="list-group-item">
+                Note 2
+            </li> */}
+        </ul>
+    );
+}
